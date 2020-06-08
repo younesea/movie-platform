@@ -25,12 +25,6 @@ export default {
    */
   css: ['~/assets/css/main.css'],
   /*
-   ** Postcss config
-   */
-  postcss: {
-    plugins: {}
-  },
-  /*
    ** Plugins to load before mounting the App
    */
   plugins: [],
@@ -68,6 +62,14 @@ export default {
             }
           ]
         ]
+      }
+    },
+    /*
+     ** Postcss config
+     */
+    postcss: {
+      plugins: {
+        'postcss-plugin-px2rem': { rootValue: 16 }
       }
     },
     /*
