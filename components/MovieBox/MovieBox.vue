@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLink to="/">
+    <NuxtLink to="to">
       <div
         class="w-full text-center border border-gray-500 rounded overflow-hidden"
       >
@@ -30,6 +30,10 @@ export default Vue.extend({
       default: 'auto',
       validator: (value: LoadingAttr) =>
         Object.values(LoadingAttr).includes(value),
+    },
+    to: {
+      type: String,
+      default: '/',
     },
   },
 })
