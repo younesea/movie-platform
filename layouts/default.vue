@@ -7,7 +7,7 @@
 
 <script lang="ts">
   import Vue from 'vue'
-  import TheHeader from "~/components/TheHeader"
+  import TheHeader from "@/components/TheHeader"
 
   export default Vue.extend({
     components: {

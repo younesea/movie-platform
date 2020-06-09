@@ -1,4 +1,4 @@
-import TheHeader from '~/components/TheHeader/TheHeader.vue'
+import TheHeader from '@/components/TheHeader/TheHeader.vue'
 import { mount, RouterLinkStub } from '@vue/test-utils'
 
 describe('TheHeader', () => {
@@ -9,7 +9,7 @@ describe('TheHeader', () => {
   })
 
   it('has a navbar', () => {
-    expect(wrapper.find('nav')).toBeDefined()
+    expect(wrapper.findAll('nav').length).toBe(1)
   })
 
   it('has nav items', () => {

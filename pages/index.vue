@@ -26,7 +26,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Logo from '~/components/Logo.vue'
+import Logo from '@/components/Logo.vue'
 import 'vueperslides/dist/vueperslides.css'
 
 export default Vue.extend({

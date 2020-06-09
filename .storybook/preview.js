@@ -1,5 +1,11 @@
-import 'tailwindcss/dist/tailwind.css';
+import Vue from 'vue'
+import 'tailwindcss/dist/tailwind.css'
 import { addDecorator } from '@storybook/vue'
+
+Vue.component('NuxtLink', {
+  props: ['to'],
+  template: '<div><slot>NuxtLink</slot></div>'
+})
 
 const decoratorVueTemplate = () => ({
   template: `
