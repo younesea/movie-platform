@@ -1,11 +1,11 @@
-import TheHeader from '@/components/TheHeader/TheHeader.vue'
 import { mount, RouterLinkStub } from '@vue/test-utils'
+import TheHeader from '@/components/TheHeader/TheHeader.vue'
 
 describe('TheHeader', () => {
   const wrapper = mount(TheHeader, {
     stubs: {
-      NuxtLink: RouterLinkStub
-    }
+      NuxtLink: RouterLinkStub,
+    },
   })
 
   it('has a navbar', () => {

@@ -1,12 +1,12 @@
 import TheHeader from './TheHeader.vue'
 
 export default {
-  title: 'Header'
+  title: 'Header',
 }
 
 export const Default = () => ({
   components: {
-    TheHeader
+    TheHeader,
   },
-  template: '<the-header></the-header>'
+  template: '<the-header></the-header>',
 })

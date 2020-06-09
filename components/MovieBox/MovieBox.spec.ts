@@ -1,8 +1,8 @@
-import { MountOptions, RouterLinkStub } from "@vue/test-utils";
+import { MountOptions, RouterLinkStub } from '@vue/test-utils'
+import Vue from 'vue'
 import MovieBox from '@/components/MovieBox'
 import { LoadingAttr } from '@/enums'
-import { mountComponent } from '~/utils/tests'
-import Vue from "vue";
+import { mountComponent } from '@/utils/tests'
 
 interface IConfig extends MountOptions<Vue> {
   propsData: {
@@ -18,11 +18,11 @@ describe('MovieBox', () => {
       name: 'The Blackout',
       src:
         'https://image.tmdb.org/t/p/original/avl9MEQhtvokNnzoWepkmHBZ2ss.jpg',
-      loading: LoadingAttr.Lazy
+      loading: LoadingAttr.Lazy,
     },
     stubs: {
-      NuxtLink: RouterLinkStub
-    }
+      NuxtLink: RouterLinkStub,
+    },
   }
   const createWrapper = mountComponent(MovieBox)
   const defaultWrapper = createWrapper(defaultConfig)

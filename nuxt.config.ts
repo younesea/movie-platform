@@ -11,10 +11,10 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: process.env.npm_package_description || '',
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
   /*
    ** Customize the progress-bar color
@@ -36,7 +36,7 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
   ],
   /*
    ** Nuxt.js modules
@@ -45,36 +45,36 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
   /*
    ** Build configuration
    */
   build: {
     babel: {
-      presets({ isServer }) {
+      presets({ isServer }: any) {
         return [
           [
             require.resolve('@nuxt/babel-preset-app'),
             {
               buildTarget: isServer ? 'server' : 'client',
-              corejs: { version: 3 }
-            }
-          ]
+              corejs: { version: 3 },
+            },
+          ],
         ]
-      }
+      },
     },
     /*
      ** Postcss config
      */
     postcss: {
       plugins: {
-        'postcss-plugin-px2rem': { rootValue: 16 }
-      }
+        'postcss-plugin-px2rem': { rootValue: 16 },
+      },
     },
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
-  }
+    extend() {},
+  },
 }

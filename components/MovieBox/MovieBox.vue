@@ -1,7 +1,9 @@
 <template>
   <div>
     <NuxtLink to="/">
-      <div class="w-full text-center border border-gray-500 rounded overflow-hidden">
+      <div
+        class="w-full text-center border border-gray-500 rounded overflow-hidden"
+      >
         <img :src="src" :alt="name" :loading="loading" />
       </div>
     </NuxtLink>
@@ -10,25 +12,26 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { LoadingAttr } from "@/enums";
+import { LoadingAttr } from '@/enums'
 
 export default Vue.extend({
   name: 'MovieBox',
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     src: {
       type: String,
-      required: true
+      required: true,
     },
     loading: {
       type: String,
       default: 'auto',
-      validator: (value: LoadingAttr) => Object.values(LoadingAttr).indexOf(value) !== -1
-    }
-  }
+      validator: (value: LoadingAttr) =>
+        Object.values(LoadingAttr).includes(value),
+    },
+  },
 })
 </script>
 

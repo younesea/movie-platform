@@ -6,19 +6,20 @@
 </template>
 
 <script lang="ts">
-  import Vue from 'vue'
-  import TheHeader from "@/components/TheHeader"
+import Vue from 'vue'
+import TheHeader from '@/components/TheHeader'
 
-  export default Vue.extend({
-    components: {
-      TheHeader
-    }
-  })
+export default Vue.extend({
+  components: {
+    TheHeader,
+  },
+})
 </script>
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;

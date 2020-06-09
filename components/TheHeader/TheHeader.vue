@@ -2,7 +2,11 @@
   <header class="w-full border-b-2 py-5 px-10">
     <nav>
       <ul class="list-none flex justify-between w-full">
-        <li v-for="item in items" class="transition ease-in duration-100 text-black hover:text-green-600">
+        <li
+          v-for="item in items"
+          :key="item.text"
+          class="transition ease-in duration-100 text-black hover:text-green-600"
+        >
           <NuxtLink :to="item.link" v-text="item.text" />
         </li>
       </ul>
@@ -16,13 +20,13 @@ export default {
   data() {
     const items = [
       { text: 'Home', link: '/' },
-      { text: 'Search', link: '/search' }
+      { text: 'Search', link: '/search' },
     ]
 
     return {
-      items
+      items,
     }
-  }
+  },
 }
 </script>
 

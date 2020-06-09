@@ -2,7 +2,6 @@ const path = require('path')
 
 module.exports = {
   addons: [
-    '@storybook/addon-viewport/register',
     '@storybook/preset-typescript'
   ],
   webpackFinal: config => {
