@@ -1,7 +1,7 @@
 <template>
   <section class="block w-full h-full">
-    <h2 class="text-3xl mb-5">{{ title }}</h2>
-    <div class="slider">
+    <h2 class="text-3xl mb-5 px-16">{{ title }}</h2>
+    <div class="slider px-16">
       <VueperSlides
         class="vueper no-shadow w-full"
         :breakpoints="slider.breakpoints"
@@ -62,11 +62,15 @@ export default Vue.extend({
     return {
       slider: {
         breakpoints: {
-          1100: {
+          900: {
             ...defaultConfig,
             visibleSlides: 4,
           },
           600: {
+            ...defaultConfig,
+            visibleSlides: 3,
+          },
+          500: {
             ...defaultConfig,
             visibleSlides: 2,
           },
@@ -80,7 +84,7 @@ export default Vue.extend({
 
 <style scoped>
 .slider {
-  height: 15.7rem;
+  height: 13rem;
 }
 
 .vueper >>> .vueperslides__parallax-wrapper {
@@ -91,5 +95,11 @@ export default Vue.extend({
 .vueper >>> .vueperslides__parallax-wrapper,
 .vueper >>> .vueperslides__inner {
   height: 100%;
+}
+
+@media screen and (min-width: 1100px) {
+  .slider {
+    height: 17rem;
+  }
 }
 </style>

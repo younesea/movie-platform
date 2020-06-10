@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NuxtLink to="to">
+    <NuxtLink :to="to">
       <div
         class="w-full text-center border border-gray-500 rounded overflow-hidden"
       >
