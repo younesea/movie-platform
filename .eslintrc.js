@@ -5,5 +5,8 @@ module.exports = {
     'plugin:prettier/recommended',
     'prettier/vue',
   ],
-  rules: {},
+  rules: {
+    'no-console': 'off',
+    'no-unused-expressions': 'off',
+  },
 }

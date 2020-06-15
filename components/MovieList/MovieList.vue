@@ -7,7 +7,11 @@
         :breakpoints="slider.breakpoints"
         v-bind="slider.defaultConfig"
       >
-        <VueperSlide v-for="movie in movies" :key="movie.name" class="slide">
+        <VueperSlide
+          v-for="(movie, index) in movies"
+          :key="movie.name + index"
+          class="slide"
+        >
           <template v-slot:content>
             <MovieBox
               :name="movie.name"
@@ -54,8 +58,9 @@ export default Vue.extend({
       slideRatio: 1 / 4,
       arrows: true,
       bullets: false,
-      draggingDistance: 1,
+      draggable: false,
       gap: 5,
+      touchable: false,
       visibleSlides: 5,
     }
 

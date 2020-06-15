@@ -1,7 +1,7 @@
 <template>
   <Container>
-    <div v-if="$fetchState.pending">Fetching movies/shows...</div>
-    <div v-else>
+    <div v-if="$fetchState.pending" class="mt-4 px-16">Fetching movies...</div>
+    <main v-else>
       <div v-if="error.length" class="mt-4 text-5xl text-center text-red-600">
         {{ error }}
       </div>
@@ -13,7 +13,7 @@
         :title="title"
         :movies="movies"
       />
-    </div>
+    </main>
   </Container>
 </template>
 
@@ -21,11 +21,7 @@
 import Vue from 'vue'
 import MovieList from '@/components/MovieList'
 import Container from '@/components/Container'
-
-// TODO: Refactor to more specific interface
-interface MovieListResponse {
-  results: { [key: string]: any }[]
-}
+import { IMovieList } from '@/types/TheMovieDb'
 
 export default Vue.extend({
   components: {
@@ -34,11 +30,11 @@ export default Vue.extend({
   },
   async fetch() {
     const { $axios } = this.$nuxt.context
-    const results: Promise<MovieListResponse>[] = []
+    const results: Promise<IMovieList>[] = []
     const token = process.env.THE_MOVIE_DB_ACCESS_TOKEN || ''
     const baseUrl = process.env.THE_MOVIE_BASE_URL || ''
     const baseImagePath = process.env.THE_MOVIE_POSTER_BASE_PATH || ''
-    let response: MovieListResponse[] = []
+    let response: IMovieList[] = []
 
     $axios.setToken(token, 'Bearer')
 
@@ -56,11 +52,12 @@ export default Vue.extend({
       this.error = ''
     } catch (error) {
       this.error = 'Something went wrong...'
-      console.error(error) // eslint-disable-line
+      console.error(error)
     }
 
     const titles: string[] = ['Popular', 'Top Rated', 'Upcoming']
 
+    // Gets the properties needed for the UI from the response
     this.lists = response.reduce(
       (previousValue, currentValue, currentIndex) => {
         const result: any = [...previousValue]
